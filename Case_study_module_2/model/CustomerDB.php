@@ -68,7 +68,7 @@ class CustomerDB
     }
     public function delete($id)
     {
-        $sql = "DELETE FROM customer WHERE id = ?";
+        $sql = "DELETE FROM `customer` WHERE `customer`.`id` = ?";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $id);
         return $statement->execute();
