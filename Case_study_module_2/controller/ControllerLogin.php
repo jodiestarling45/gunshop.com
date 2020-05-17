@@ -3,10 +3,8 @@
 namespace controller;
 
 use model\user_password;
-use model\DBConnect;
 use model\DBLogin;
-
-include 'model/DBConnect.php';
+use model\DBconnection;
 
 class ControllerLogin
 {
@@ -14,8 +12,8 @@ class ControllerLogin
 
     public function __construct()
     {
-        $connection = new DBConnect('mysql:host=localhost;dbname=manager_guns', 'admin', '123456');
-        $this->DBConnectionLogin = new DBLogin($connection->connection());
+        $connection = new DBconnection('mysql:host=localhost;dbname=manager_guns', 'admin', '123456');
+        $this->DBConnectionLogin = new DBLogin($connection->connect());
     }
 
     public function login()

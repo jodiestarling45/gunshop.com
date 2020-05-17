@@ -688,7 +688,7 @@
 
                 <form action="index2.php?">
                     <input type="hidden" value="buy" name="page">
-                    <input type="hidden" value="<?php echo $gun->name; ?>" name="id">
+                    <input type="hidden" value="<?php echo $gun->name           ; ?>" name="id">
                     <a href="./index_3.php?page=view&id=<?php echo $gun->id; ?>" class="btn btn-sm">
                         <div class="product-card">
                             <div class="product-image">

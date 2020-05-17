@@ -96,7 +96,7 @@ class CustomerDB
     }
     public function buy($name_gun,$nameCustomer){
 
-        $sql="INSERT INTO `order-gun`(`gun`, `customer`) VALUES ('$name_gundddddddddddddddd','$nameCustomer')";
+        $sql="INSERT INTO `order-gun`(`gun`, `customer`) VALUES ('$name_gun','$nameCustomer')";
         $this->connection->exec($sql);
     }
     public function getOrder(){
