@@ -19,13 +19,16 @@ class ControllerLogin
     public function login()
     {
 
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            session_start();
+            $_SESSION['email']=$_POST['email'];
             $result = $this->DBConnectionLogin->checkLogin($_POST['email']);
             if ($result) {
                 header('location: index_3.php');
             } else {
                 $message = "wrong password or account";
-                header('location: index_1.php');
+                header("location: index_1.php");
             }
         }
         include 'view/loginpage.php';
@@ -59,5 +62,9 @@ class ControllerLogin
 
         }
         include 'view/forgotPassword.php';
+    }
+    public function logout(){
+        session_destroy();
+        header('location: index_1.php');
     }
 }

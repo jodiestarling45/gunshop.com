@@ -651,6 +651,10 @@
                     <li><a href="index_3.php?page=add">add new</a></li>
                     <li><a href="index2.php">customer</a></li>
                     <li><a href="index2.php?page=order">order</a></li>
+                    <li><a href="index_1.php?page=logout">logout</a></li>
+                    <li><h3 style="color: blue"><?php
+                            echo $_SESSION['email']
+                            ?></h3></li>
                 </ul>
             </div>
         </nav>
@@ -688,7 +692,7 @@
 
                 <form action="index2.php?">
                     <input type="hidden" value="buy" name="page">
-                    <input type="hidden" value="<?php echo $gun->name           ; ?>" name="id">
+                    <input type="hidden" value="<?php echo $gun->name; ?>" name="id">
                     <a href="./index_3.php?page=view&id=<?php echo $gun->id; ?>" class="btn btn-sm">
                         <div class="product-card">
                             <div class="product-image">
